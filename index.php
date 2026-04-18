@@ -7,14 +7,19 @@ error_reporting(E_ALL);
 require_once './Models/movie.php';
 
 require_once './Models/genre.php';
-//$rick_morty = new Movie('rick & Morty', ' Justin Roiland',false);
-$che_bella_giornata = new Movie('Che bella giornata', 'Francesco Medici',true, new Genre ('comico'));
+$rick_morty = new Movie('rick & Morty', ' Justin Roiland',false);
+//$che_bella_giornata = new Movie('Che bella giornata', 'Francesco Medici',true, new Genre ('comico, drammatico'));
 
 
 
 //var_dump($rick_morty);
-var_dump($che_bella_giornata->getSeen());
-
+var_dump($rick_morty);
+var_dump($rick_morty->getSeen());
+// var_dump($che_bella_giornata);
+// var_dump($che_bella_giornata->getSeen());
+$action = new Genre("Azione");
+$rick_morty->addGenre($action);
+var_dump( $rick_morty->getGenre());
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +30,6 @@ var_dump($che_bella_giornata->getSeen());
     <title>Document</title>
 </head>
 <body>
-    <h1>ciqao</h1>
+ <h1>ciao</h1>
 </body>
 </html>

@@ -4,20 +4,23 @@ class Movie {
     public $title;
     public $autor;
     public $seen;
-    public $genre;
+    private array $genres = [];
 
-    function __construct($_title, $_autor, $_seen , Genre $_genre){
+    function __construct($_title, $_autor, $_seen ){
         $this->title=$_title;
         $this->autor=$_autor;
         $this->seen=$_seen;
-        $this-> genre=$_genre;
+        
     }
-
+    public function addGenre (Genre $genre): void{
+         $this->genres[] = $genre;
+    }
+    public function getGenre(): array{
+        return $this->genres;
+    }
     public function getSeen(){
         if ($this->seen){
-            return 'gia visto';
-        }else{
-            return 'da vedere';
+            return 'nei preferiti';
         }
     }
 }
